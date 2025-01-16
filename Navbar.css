@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
 nav{
   position: fixed;
-  z-index: 99;
+  top: 0;
+  left: 0;
+  z-index: 6969;
   width: 100%;
 
   background: #3D52A0;
@@ -20,15 +20,16 @@ nav .wrapper{
   line-height: 70px;
   margin: auto;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.wrapper .logo a{
+/* .wrapper .logo a{
   color: #f2f2f2;
   font-size: 30px;
   font-weight: 600;
   text-decoration: none;
-}
+} */
 .wrapper .nav-links{
   display: inline-flex;
 }
@@ -102,7 +103,7 @@ nav input{
 .wrapper .name{
   color: white;
   margin:  -20px;
-  width: 60%;
+  width: 100%;
 }
 
 .name a {

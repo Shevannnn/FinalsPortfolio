@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  font-family: 'Poppins', sans-serif;
+}
 
 body {
-    /* font-family: Arial, sans-serif; FONT IS IN NAVBAR */ 
-    background-color: #f4f4f9;
+    background-color: white;
     margin: 0;
     padding: 0;
-    margin-top: 70px; /*Exact size of navbar*/
+    /* margin-top: 70px; Exact size of navbar */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -12,6 +15,64 @@ body {
     min-height: 100vh;
   }
   
+/*HOME************************************************************/
+
+.home-background {
+  width: 100%; /* Full width */
+  height: 100vh; /* Full height of the viewport */
+  background-image: url(/Images/bground.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.home-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  text-align: center;
+  padding-left: 30vh;
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 20px;
+  color: white;
+}
+
+.button-62 {
+  background: linear-gradient(to bottom right, #6EACDA, #03346E);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), 
+              -.125rem -.125rem 1rem rgba(110, 172, 218, 0.5), 
+              .125rem .125rem 1rem rgba(110, 172, 218, 0.5);
+}
+
+
+/*PROFILE********************************************************/
+
   .profile-container {
     background: #fff;
     padding: 2rem;

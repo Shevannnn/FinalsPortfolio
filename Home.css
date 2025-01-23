@@ -20,7 +20,7 @@ body {
 .home-background {
   width: 100%; /* Full width */
   height: 100vh; /* Full height of the viewport */
-  background-image: url("/Images/bground.jpg");
+  background-image: url("/FinalsPortfolio/Images/bground.jpg");
   background-size: cover;
   background-position: center;
 }

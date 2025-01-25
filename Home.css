@@ -3,133 +3,102 @@
   font-family: 'Poppins', sans-serif;
 }
 
-body {
-    background-color: white;
+body.homePage {
+    background-color: #0D1117;
     margin: 0;
     padding: 0;
     /* margin-top: 70px; Exact size of navbar */
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
   }
   
 /*HOME************************************************************/
 
-.home-background {
-  width: 100%; /* Full width */
-  height: 100vh; /* Full height of the viewport */
-  background-image: url("/Images/bground.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
 .home-container {
-  position: relative;
-  height: 100vh;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: left;
-  text-align: center;
-  padding-left: 30vh;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 30px;
+
+  outline: 2px dashed green;
 }
 
-.home-content {
+.intro-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  padding: 2rem;
+  text-align: center;
+  
+  outline: 2px dashed red;
+}
+
+.intro-content {
   position: relative;
   z-index: 1;
   max-width: 800px;
   padding: 20px;
   color: white;
+  outline: 2px dashed red;
+
 }
 
-/* Carousel Container */
-.carousel-container {
+.project-grid {
+  flex: 1; /* Takes up the other half of the width */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Create a 2x2 grid */
+  gap: 1.5rem; /* Space between cards */
+  padding: 2rem;
+  outline: 2px dashed blue; /* Debug border */
+}
+
+.project-card {
   width: 100%;
-  height: 50vh; /* Takes half the page */
-  position: relative;
+  background-color: #021526;
+  border-radius: 12px;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f4f4f4;
-  opacity: 10%;
-}
-
-/* Carousel Items */
-.carousel {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
-  height: 100%;
-}
-
-.carousel-item {
-  min-width: 100%;
-  height: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #FFFFFF;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
 }
 
-.carousel-item.active {
-  opacity: 1;
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* Image Styling */
-.carousel-item img {
-  max-height: 70%;
+.project-card-image {
+  width: 100%;
+  height: 200px;
   object-fit: cover;
-  border-radius: 10px;
-  width: auto;
 }
 
-/* Caption Styling */
-.carousel-caption {
-  margin-top: 10px;
-  color: #333;
+.project-card-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.carousel-caption h3 {
-  margin: 10px 0 5px;
+.project-card-title {
   font-size: 1.5rem;
+  margin: 0;
 }
 
-.carousel-caption p {
+.project-card-description {
   font-size: 1rem;
-  color: #666;
-}
-
-/* Carousel Controls */
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  font-size: 2rem;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 2;
-  border-radius: 50%;
-}
-
-.carousel-control.prev {
-  left: 10px;
-}
-
-.carousel-control.next {
-  right: 10px;
-}
-
-.carousel-control:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  line-height: 1.5;
+  margin: 0;
 }
 
 .button-62 {
@@ -138,7 +107,9 @@ body {
   border-radius: 12px;
   color: #FFFFFF;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex; /* Enables flexbox */
+  align-items: center; /* Aligns icon and text vertically */
+  justify-content: center; /* Optional: centers content horizontally */
   font-size: 16px;
   font-weight: 500;
   line-height: 2.5;
@@ -151,6 +122,7 @@ body {
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: nowrap;
+  gap: 0.5rem; /* Spacing between icon and text */
 }
 
 .button-62:not([disabled]):hover {
@@ -159,11 +131,32 @@ body {
               .125rem .125rem 1rem rgba(110, 172, 218, 0.5);
 }
 
+i {
+  font-size: 24px; /* Set icon size */
+  color: #FFFFFF; /* Set icon color */
+}
 
 /*PROFILE********************************************************/
+body.aboutPage {
+  background-color: #0D1117;
+  margin: 0;
+  padding: 0;
+  /* margin-top: 70px; Exact size of navbar */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.profile-page {
+  display: flex;
+  flex-direction: row;
+}
+
 
   .profile-container {
-    background: #fff;
+    background: #151B23;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -181,13 +174,13 @@ body {
   
   .profile-header h1 {
     font-size: 2rem;
-    color: #333;
+    color: white;
     margin: 0.5rem 0;
   }
   
   .profile-header p {
     font-size: 1.2rem;
-    color: #777;
+    color: white;
   }
   
   .profile-details {
@@ -209,7 +202,7 @@ body {
   /*CONTACT*******************************************************************************************************************/
 
   .contact-container {
-    background: #fff;
+    background: #151B23;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

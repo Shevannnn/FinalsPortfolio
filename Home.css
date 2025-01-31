@@ -13,9 +13,13 @@ body.homePage {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/Images/BG.jpg');
   }
   
-/*HOME************************************************************/
+/*HOME************************************************************************************/
 
 .home-container {
   display: flex;
@@ -25,21 +29,24 @@ body.homePage {
   height: 100%;
   width: 100%;
   margin-top: 30px;
-
-  outline: 2px dashed green;
+  
 }
 
 .intro-container {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: left;
   padding: 2rem;
-  text-align: center;
-  
-  outline: 2px dashed red;
+  margin-left: 1rem;
+  text-align: left;
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 
 .intro-content {
   position: relative;
@@ -47,29 +54,29 @@ body.homePage {
   max-width: 800px;
   padding: 20px;
   color: white;
-  outline: 2px dashed red;
-
 }
 
-.project-grid {
-  flex: 1; /* Takes up the other half of the width */
+.showcase-grid {
+  flex: 1;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Create a 2x2 grid */
-  gap: 1.5rem; /* Space between cards */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
   padding: 2rem;
-  outline: 2px dashed blue; /* Debug border */
 }
 
 .project-card {
   width: 100%;
-  background-color: #021526;
+  /* background-color: #021526; */
+  background-color: #0D1117;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: #FFFFFF;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
 }
 
 .project-card:hover {
@@ -107,14 +114,15 @@ body.homePage {
   border-radius: 12px;
   color: #FFFFFF;
   cursor: pointer;
-  display: inline-flex; /* Enables flexbox */
-  align-items: center; /* Aligns icon and text vertically */
-  justify-content: center; /* Optional: centers content horizontally */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 16px;
   font-weight: 500;
   line-height: 2.5;
   outline: transparent;
   padding: 0 1rem;
+  margin-top: 1rem;
   text-align: center;
   text-decoration: none;
   transition: box-shadow .2s ease-in-out;
@@ -122,7 +130,7 @@ body.homePage {
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: nowrap;
-  gap: 0.5rem; /* Spacing between icon and text */
+  gap: 0.5rem;
 }
 
 .button-62:not([disabled]):hover {
@@ -131,12 +139,64 @@ body.homePage {
               .125rem .125rem 1rem rgba(110, 172, 218, 0.5);
 }
 
-i {
-  font-size: 24px; /* Set icon size */
-  color: #FFFFFF; /* Set icon color */
+.intro-logos i {
+  font-size: 30px;
+  color: #FFFFFF;
+  transition: color 0.3s ease, transform 0.3s ease;
+  margin-right: 10px;
 }
 
-/*PROFILE********************************************************/
+.intro-logos a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Hover effects */
+.intro-logos i:hover {
+  text-decoration: none;
+  transform: scale(1.2);
+}
+
+.intro-logos .bxl-linkedin-square:hover {
+  color: #0077B5;
+}
+
+/*PROJECTS*************************************************************************************/
+body.projectPage {
+  background-color: #0D1117;
+  margin: 0;
+  padding: 0;
+  /* margin-top: 70px; Exact size of navbar */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 30px;
+
+  outline: 2px dashed green;
+}
+
+.project-grid {
+  flex: 1; /* Takes up the other half of the width */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Create a 2x2 grid */
+  gap: 1.5rem; /* Space between cards */
+  padding: 2rem;
+  outline: 2px dashed blue; /* Debug border */
+}
+
+
+/*PROFILE*******************************************************************************************/
 body.aboutPage {
   background-color: #0D1117;
   margin: 0;
@@ -151,53 +211,171 @@ body.aboutPage {
 
 .profile-page {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: white;
+  height: 100%;
+  width: 100%;
+
+  outline: 2px dashed green;
+  
 }
 
+.profile-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 10vw;
 
-  .profile-container {
-    background: #151B23;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
-  }
+  outline: 2px dashed red;
+}
+
+.profile-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-right: 10vw;
+
+
+  outline: 2px dashed blue;
+}
+
+.profile-container {
+  background: #151B23;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 50%;
+}
   
-  .profile-header img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-  }
+.profile-header img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
   
-  .profile-header h1 {
-    font-size: 2rem;
-    color: white;
-    margin: 0.5rem 0;
-  }
+.profile-header h1 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.profile-header p {
+  font-size: 1.2rem;
+}
   
-  .profile-header p {
-    font-size: 1.2rem;
-    color: white;
-  }
-  
-  .profile-details {
-    text-align: left;
-    margin-top: 2rem;
-  }
-  
-  .profile-details h2 {
-    color: #333;
-    margin-bottom: 0.5rem;
-  }
-  
-  .profile-details p {
-    color: #555;
-    font-size: 1rem;
-    margin: 0.5rem 0;
-  }
+.cta-container {
+  background: #151B23;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  align-items: center;
+  width: 50%;
+} 
+
+.cta-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0D1117;
+  padding: 10px 20px;
+  border-radius: 8px;
+  width: 90%;
+  text-decoration: none;
+  color:white;
+  transition: background 0.3s ease;
+}
+
+.cta i {
+  font-size: 30px;
+}
+
+.cta-text {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.cta:hover {
+  background-color: #1A1F29;
+}
+
+.about-container {
+  background-color: #151B23;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.about-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-container p {
+  text-align: center;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.technologies-container {
+  background-color: #151B23;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.technologies-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.tech-content-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tech {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0D1117;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100px;
+  height: 60px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.tech i {
+  font-size: 30px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.tech p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+}
+
   
   /*CONTACT*******************************************************************************************************************/
 

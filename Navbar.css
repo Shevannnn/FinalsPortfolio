@@ -10,7 +10,8 @@ nav{
   z-index: 6969;
   width: 100%;
 
-  background: #03346E;
+  background: #021526;
+  /* background: #03346E; */
 }
 nav .wrapper{
   position: relative;
@@ -32,7 +33,7 @@ nav .wrapper{
   list-style: none;
 }
 .nav-links li a{
-  color: #f2f2f2;
+  color: white;
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
@@ -42,7 +43,7 @@ nav .wrapper{
   margin-left: 10px;
 }
 .nav-links li a:hover{
-  background: #021526;
+  background: #03346E;
 }
 .nav-links .mobile-item{
   display: none;
@@ -87,3 +88,5 @@ nav input{
   text-decoration: none;
   color: white;
 }
+
+/*FOOTER****************************************************************/

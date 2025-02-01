@@ -1,8 +1,12 @@
 $(document).ready(function() {
+  $(".home-container, .project-container, .profile-page, .contact-container")
+  .css("display", "none")
+  .fadeIn(200);
+
   let preloadedPages = {};
 
   let pages = ['index.html', 'About.html', 'Contact.html', 'Projects.html'];
-  
+
   pages.forEach(function(page) {
       fetch(page)
           .then(response => response.text())
@@ -12,53 +16,37 @@ $(document).ready(function() {
           .catch(error => console.error('Error preloading page: ' + page, error));
   });
 
-
   $('.preload-link').on('click', function(e) {
-      e.preventDefault();
-      let page = $(this).data('page');
+    e.preventDefault(); // Prevent the default link behavior
+    let page = $(this).data('page'); // Get the page to load
 
-      if (preloadedPages[page]) {
-          $('#content').html(preloadedPages[page]);
-      } else {
-          $('#content').load(page);
-      }
+    // Update the URL in the browser
+    history.pushState({ page: page }, '', page);
+
+    // Inject preloaded content
+    if (preloadedPages[page]) {
+        $(".home-container, .project-container, .profile-page, .contact-container")
+            .html(preloadedPages[page]); // Inject preloaded content
+    } else {
+        // Fallback: load the content from the server
+        $(".home-container, .project-container, .profile-page, .contact-container")
+            .load(page);
+    }
   });
-});
 
-$(window).on('popstate', function(e) {
+  $(window).on('popstate', function(e) {
     let state = e.originalEvent.state;
     if (state && state.page) {
         let page = state.page;
-        $('#content').fadeOut(300, function() {
-            if (preloadedPages[page]) {
-                $('#content').html(preloadedPages[page]);
-            } else {
-                $('#content').load(page);
-            }
-            $('#content').fadeIn(300);
-        });
+
+        // Inject preloaded content without fade effect
+        if (preloadedPages[page]) {
+            $(".home-container, .project-container, .profile-page, .contact-container")
+                .html(preloadedPages[page]);
+        } else {
+            $(".home-container, .project-container, .profile-page, .contact-container")
+                .load(page);
+        }
     }
-});
-
-
-$('.preload-link').on('click', function(e) {
-  e.preventDefault(); // Prevent default link behavior
-  let page = $(this).data('page'); // Get the page to load
-
-  // Update the URL in the browser
-  history.pushState({ page: page }, '', page);
-
-  // Fade out the current content first
-  $('#content').fadeOut(300, function() {
-      // Inject preloaded content into the #content div
-      if (preloadedPages[page]) {
-          $('#content').html(preloadedPages[page]);
-      } else {
-          // Fallback to loading the page content if not preloaded
-          $('#content').load(page);
-      }
-
-      // Fade in the new content after it has been loaded
-      $('#content').fadeIn(300);
   });
 });

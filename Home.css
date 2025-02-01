@@ -3,6 +3,13 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* .home-container,
+.project-container,
+.profile-page,
+.contact-container  */
+
+
+
 body.homePage {
     background-color: #0D1117;
     margin: 0;

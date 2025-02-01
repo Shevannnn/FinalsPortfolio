@@ -3,7 +3,7 @@ $(document).ready(function() {
   let preloadedPages = {};
 
   // Preload the HTML files
-  let pages = ['index.html', 'about.html', 'contact.html', 'projects.html'];
+  let pages = ['index.html', 'About.html', 'Contact.html', 'Projects.html'];
   
   pages.forEach(function(page) {
       // Fetch each page and store it in preloadedPages

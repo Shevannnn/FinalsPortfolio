@@ -16,7 +16,7 @@ body.homePage {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('Images/BG.jpg');
+    background-image: url('Images/BG.webp');
 }
   
 /*HOME************************************************************************************/
@@ -247,7 +247,7 @@ body.aboutPage {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('Images/BG.jpg');
+  background-image: url('Images/BG.webp');
 }
 
 .profile-page {
@@ -388,7 +388,7 @@ body.contactPage {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('Images/BG.jpg');
+    background-image: url('Images/BG.webp');
 }
 
 .contact-container {

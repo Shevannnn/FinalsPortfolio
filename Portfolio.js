@@ -1,28 +1,47 @@
-let currentIndex = 0;
-const slides = document.querySelectorAll(".carousel-item");
-const carousel = document.querySelector(".carousel");
+$(document).ready(function() {
+  // Object to store the preloaded HTML files
+  let preloadedPages = {};
 
-function updateCarousel() {
-  // Calculate the offset for the active slide
-  const offset = -currentIndex * 100; // Move carousel by 100% per slide
-  carousel.style.transform = `translateX(${offset}%)`;
-
-  // Optionally toggle the 'active' class for other effects
-  slides.forEach((slide, i) => {
-    slide.classList.toggle("active", i === currentIndex);
+  // Preload the HTML files
+  let pages = ['index.html', 'about.html', 'contact.html', 'projects.html'];
+  
+  pages.forEach(function(page) {
+      // Fetch each page and store it in preloadedPages
+      fetch(page)
+          .then(response => response.text())
+          .then(data => {
+              preloadedPages[page] = data;
+          })
+          .catch(error => console.error('Error preloading page: ' + page, error));
   });
-}
 
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % slides.length; // Loop back to the first slide
-  updateCarousel();
-}
+  // Handle navigation when a link is clicked
+  $('.preload-link').on('click', function(e) {
+      e.preventDefault(); // Prevent the default behavior (reloading the page)
+      let page = $(this).data('page'); // Get the page to load
 
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length; // Loop back to the last slide
-  updateCarousel();
-}
+      // Inject preloaded content into the #content div
+      if (preloadedPages[page]) {
+          $('#content').html(preloadedPages[page]);
+      } else {
+          // Fallback to loading the page content if not preloaded
+          $('#content').load(page);
+      }
+  });
+});
 
-setInterval(() => {
-    nextSlide();
-  }, 5000)
+$('.preload-link').on('click', function(e) {
+  e.preventDefault(); // Prevent default link behavior
+  let page = $(this).data('page'); // Get the page to load
+
+  // Update the URL in the browser
+  history.pushState({ page: page }, '', page);
+
+  // Inject preloaded content into the #content div
+  if (preloadedPages[page]) {
+      $('#content').html(preloadedPages[page]);
+  } else {
+      // Fallback to loading the page content if not preloaded
+      $('#content').load(page);
+  }
+});

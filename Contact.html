@@ -6,46 +6,52 @@
     <title>Home</title>
     <link rel="stylesheet" href="Navbar.css">
     <link rel="stylesheet" href="Home.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body class="homepage">
+<body class="contactPage">
   <header>
     <nav>
         <div class="wrapper">
-        <div class="name">
-            <a href="Home.html"><h1>Evan Palo</h1></a>
-        </div>
+          <div class="name"><h1>Evan Palo</h1></div>
           <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html">Projects</a></li>
+            <li><a href="Projects.html">Projects</a></li>
             <li><a href="About.html">About</a></li>
             <li><a href="Contact.html">Contact</a></li>
+          </ul>
         </div>
-      </nav>    
-</header>
-    
+    </nav>    
+  </header>
+  <footer class="footer">
+    <p>
+      Deployed using <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+    </p>
+  </footer>
 
-
-    <main>
-        <div class="profile-container">
-          <div class="profile-header">
-            <h1 id="profile-name">Contact Me!</h1>
-          </div>
-  
-          <div class="profile-details">
-            <h2>Email</h2>
-            <p id="profile-about">21-0270c@sgen.edu.ph</p>
-            <h2>Contact</h2>
-            <p id="profile-email">(+63)917-676-6448</p>
-          </div>
-  
-          <img width="38" height="38" src="Images/img_LinkedIn.png" alt="linkedin-logo"/>
-          <img width="38" height="38" src="Images/img_Github.png" alt="github-logo"/>
-          <img width="38" height="38" src="Images/img_Gmail.png" alt="gmail-logo"/>
-
-  
+  <div class="contact-container">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out using any of the methods below.</p>
+        <div class="contact-links-container">
+          <a href="tel:+639176766448" class="cta">
+            <i class='bx bx-phone'></i>
+            <span class="cta-text">+63 917 676 6448</span>
+          </a>
+          <a href="mailto:evaneldridge.palo@gmail.com" class="cta">
+            <i class='bx bx-envelope'></i>
+            <span class="cta-text">evaneldridge.palo@gmail.com</span>
+          </a>
+          <a href="https://linkedin.com/in/evan-palo" target="_blank" class="cta">
+            <i class='bx bxl-linkedin'></i>
+            <span class="cta-text">Evan Palo</span>
+          </a>
+          <a href="https://github.com/Shevannnn" target="_blank" class="cta">
+            <i class='bx bxl-github'></i>
+            <span class="cta-text">Shevannnn</span>
+          </a>
         </div>
-      </main>
+    </div>
 
-</body>
+    <script src="Portfolio.js"></script>
+  </body>
 </html>

@@ -160,7 +160,7 @@ body.homePage {
   color: #0077B5;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 700px) {
   /* Stack home-container vertically */
   .home-container {
     flex-direction: column; /* Stack intro and project grid vertically */

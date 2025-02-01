@@ -9,8 +9,12 @@ nav{
   left: 0;
   z-index: 6969;
   width: 100%;
+  background: rgba(2, 21, 38, 0.6);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 
-  background: #021526;
+  /* background: #021526; */
   /* background: #03346E; */
 }
 nav .wrapper{
@@ -25,57 +29,29 @@ nav .wrapper{
   align-items: center;
   justify-content: space-between;
 }
-
 .wrapper .nav-links{
   display: inline-flex;
 }
 .nav-links li{
   list-style: none;
 }
-.nav-links li a{
+.nav-links li a {
   color: white;
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
   padding: 9px 15px;
-  border-radius: 5px;
   transition: all 0.3s ease;
   margin-left: 10px;
-}
-.nav-links li a:hover{
-  background: #03346E;
-}
-.nav-links .mobile-item{
-  display: none;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  transition: border-top 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
 }
 
-
-.nav-links .drop-menu{
-  position: absolute;
-  background: #3D52A0;
-  width: 180px;
-  line-height: 45px;
-  top: 85px;
-  opacity: 0;
-  visibility: hidden;
-  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
-}
-.nav-links li:hover .drop-menu{
-  transition: all 0.3s ease;
-  top: 70px;
-  opacity: 1;
-  visibility: visible;
-}
-.drop-menu li a{
-  width: 100%;
-  display: block;
-  padding: 0 0 0 15px;
-  font-weight: 400;
-  border-radius: 0px;
-}
-
-nav input{
-  display: none;
+.nav-links li a:hover {
+  border-top: 2px solid #4ea8de;
+  border-bottom: 2px solid #4ea8de;
+  background: transparent;
 }
 
 .wrapper .name{

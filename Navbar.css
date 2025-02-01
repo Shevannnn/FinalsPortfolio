@@ -3,6 +3,13 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+}
+
 nav{
   position: fixed;
   top: 0;
@@ -19,52 +26,48 @@ nav{
   /* background: #021526; */
   /* background: #03346E; */
 }
-nav .wrapper{
+nav .nav-wrapper {
   position: relative;
-  max-width: 1300px;
-  padding: 0px 30px;
-  height: 70px;
-  line-height: 70px;
+  max-width: 85%;
+  padding: 0 2rem;
+  height: 4rem;
+  line-height: 4rem;
   margin: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
-.wrapper .nav-links{
+.nav-wrapper .nav-links{
   display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1rem;
 }
-.nav-links li{
-  list-style: none;
-}
-.nav-links li a {
+.nav-links a {
   color: white;
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
-  padding: 9px 15px;
+  line-height: 2rem;
+  height: 2rem;
+  padding: 0rem 1rem 0rem 1rem;
   transition: all 0.3s ease;
-  margin-left: 10px;
   border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
   transition: border-top 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
 }
 
-.nav-links li a:hover {
+.nav-links a:hover {
   border-top: 2px solid #4ea8de;
   border-bottom: 2px solid #4ea8de;
   background: transparent;
 }
 
-.wrapper .name{
+.nav-wrapper .name{
   color: white;
-  margin:  0px;
   width: 100%;
-}
-
-.name a {
-  text-decoration: none;
-  color: white;
 }
 
 /*FOOTER****************************************************************/
@@ -83,12 +86,27 @@ nav .wrapper{
   z-index: 9999;
 }
 
-footer a {
+.footer a {
   color: #4ea8de;
   text-decoration: none;
   font-weight: bold;
 }
 
-footer a:hover {
+.footer a:hover {
   text-decoration: underline;
+}
+
+/*MOBILE******************************************************************/
+
+@media (max-width: 480px) {
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+  }
+  .nav-wrapper .name{
+    display: none;
+  }
+
 }

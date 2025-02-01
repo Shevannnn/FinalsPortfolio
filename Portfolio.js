@@ -50,3 +50,13 @@ $(document).ready(function() {
     }
   });
 });
+
+function Toggle() {
+  var panel = document.getElementById("navLinks");
+
+  if (panel.classList.contains("show")) {
+    panel.classList.remove("show");
+  } else {
+    panel.classList.add("show");
+  }
+}

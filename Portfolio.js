@@ -1,12 +1,9 @@
 $(document).ready(function() {
-  // Object to store the preloaded HTML files
   let preloadedPages = {};
 
-  // Preload the HTML files
   let pages = ['index.html', 'About.html', 'Contact.html', 'Projects.html'];
   
   pages.forEach(function(page) {
-      // Fetch each page and store it in preloadedPages
       fetch(page)
           .then(response => response.text())
           .then(data => {
@@ -15,20 +12,34 @@ $(document).ready(function() {
           .catch(error => console.error('Error preloading page: ' + page, error));
   });
 
-  // Handle navigation when a link is clicked
-  $('.preload-link').on('click', function(e) {
-      e.preventDefault(); // Prevent the default behavior (reloading the page)
-      let page = $(this).data('page'); // Get the page to load
 
-      // Inject preloaded content into the #content div
+  $('.preload-link').on('click', function(e) {
+      e.preventDefault();
+      let page = $(this).data('page');
+
       if (preloadedPages[page]) {
           $('#content').html(preloadedPages[page]);
       } else {
-          // Fallback to loading the page content if not preloaded
           $('#content').load(page);
       }
   });
 });
+
+$(window).on('popstate', function(e) {
+    let state = e.originalEvent.state;
+    if (state && state.page) {
+        let page = state.page;
+        $('#content').fadeOut(300, function() {
+            if (preloadedPages[page]) {
+                $('#content').html(preloadedPages[page]);
+            } else {
+                $('#content').load(page);
+            }
+            $('#content').fadeIn(300);
+        });
+    }
+});
+
 
 $('.preload-link').on('click', function(e) {
   e.preventDefault(); // Prevent default link behavior
@@ -37,11 +48,17 @@ $('.preload-link').on('click', function(e) {
   // Update the URL in the browser
   history.pushState({ page: page }, '', page);
 
-  // Inject preloaded content into the #content div
-  if (preloadedPages[page]) {
-      $('#content').html(preloadedPages[page]);
-  } else {
-      // Fallback to loading the page content if not preloaded
-      $('#content').load(page);
-  }
+  // Fade out the current content first
+  $('#content').fadeOut(300, function() {
+      // Inject preloaded content into the #content div
+      if (preloadedPages[page]) {
+          $('#content').html(preloadedPages[page]);
+      } else {
+          // Fallback to loading the page content if not preloaded
+          $('#content').load(page);
+      }
+
+      // Fade in the new content after it has been loaded
+      $('#content').fadeIn(300);
+  });
 });

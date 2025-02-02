@@ -161,21 +161,21 @@ body.homePage {
 }
 
 @media (max-width: 700px) {
-  /* Stack home-container vertically */
   .home-container {
-    flex-direction: column; /* Stack intro and project grid vertically */
-    align-items: center; /* Center both elements */
-    padding: 10px; /* Add padding for better spacing */
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    margin-left: -1rem;
   }
 
   /* Project Grid Adjustments */
   .showcase-grid {
     grid-template-columns: 1fr; /* Stack project cards vertically */
-    width: 100%; /* Ensure it takes up the full width */
+    width: 80%; /* Ensure it takes up the full width */
   }
 
   .intro-container {
-    width: 100%; /* Make intro-container full width */
+    width: 80%; /* Make intro-container full width */
     padding: 1rem; /* Adjust padding for better space */
     margin-bottom: 1rem; /* Add bottom margin for spacing */
   }
@@ -222,6 +222,7 @@ body.projectPage {
   height: 100%;
   width: 100%;
   margin-top: 30px;
+  flex-wrap: wrap;
 }
 
 .project-grid {
@@ -230,6 +231,14 @@ body.projectPage {
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   padding: 2rem;
+}
+
+@media (max-width: 700px) {
+  .project-grid {
+    grid-template-columns: 1fr; /* Stack project cards vertically */
+    width: 100%; /* Ensure it takes up the full width */
+    padding-top: 4rem;
+  }
 }
 
 
@@ -259,6 +268,7 @@ body.aboutPage {
   width: 90%;
   max-width: 1200px;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .profile-left, .profile-right {
@@ -371,6 +381,18 @@ body.aboutPage {
   font-weight: bold;
 }
 
+@media (max-width: 700px) {
+  .profile-page {
+    flex-direction: column;
+    padding-top: 4rem;
+  }
+
+  .profile-left, .profile-right {
+    width: 80%; /* Full width on small screens */
+    padding: 1rem;
+  }
+}
+
 /*CONTACT*******************************************************************************************************************/
 body.contactPage {
     background-color: #0D1117;
@@ -398,7 +420,7 @@ body.contactPage {
   justify-content: flex-start;
   padding: 2rem;
   margin: 1rem;
-  text-align: left;
+  text-align: center;
   backdrop-filter: blur(10px);
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -439,4 +461,21 @@ body.contactPage {
   gap: 20px;
   align-items: flex-start;
   width: 100%;
+}
+
+@media (max-width: 700px) {
+  .contact-container {
+    width: 80%; /* Full width on mobile */
+    padding: 1rem;
+  }
+
+  .contact-content {
+    gap: 15px; /* Adjust spacing */
+  }
+  .contact-links-container {
+    width: 90%;
+  }
+  .contact-links-container p {
+    font-size: 0.9rem;
+  }
 }

@@ -49,14 +49,14 @@ $(document).ready(function() {
         }
     }
   });
+
+    $("#hamburger-icon").click(function () {
+      $(".mobile-menu").slideToggle(200);
+      $(this).toggleClass("open");
+    });
+
 });
 
-function Toggle() {
-  var panel = document.getElementById("navLinks");
-
-  if (panel.classList.contains("show")) {
-    panel.classList.remove("show");
-  } else {
-    panel.classList.add("show");
-  }
-}
+// function toggleMobileMenu(menu) {
+//   menu.classList.toggle('open');
+// }
